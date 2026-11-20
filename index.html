@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Erica Owusu 💖</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:linear-gradient(135deg,#ffe0ec,#fff5f8,#ffd6e8);min-height:100vh;display:flex;justify-content:center;padding:20px;overflow-x:hidden}
+.hearts{position:fixed;inset:0;pointer-events:none;z-index:0}
+.hearts span{position:absolute;animation:float 6s infinite ease-in-out;opacity:.6;font-size:22px}
+@keyframes float{0%{transform:translateY(100vh)}100%{transform:translateY(-100px)}}
+.card{position:relative;z-index:2;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);max-width:580px;width:100%;border-radius:28px;padding:28px;box-shadow:0 20px 50px rgba(255,77,141,.25);margin:auto}
+.badge{background:#ff4d8d;color:#fff;padding:7px 14px;border-radius:100px;font-size:12px;font-weight:600;letter-spacing:.5px;display:inline-block}
+h1{font-family:'Playfair Display',serif;font-size:36px;line-height:1.1;margin:14px 0 6px;color:#1a1a1a}
+h1 span{color:#ff2e7e}
+p.sub{color:#666;font-size:14.5px;line-height:1.6}
+.progress{height:8px;background:#ffe1ee;border-radius:100px;margin:18px 0;overflow:hidden}
+#bar{height:100%;width:14%;background:linear-gradient(90deg,#ff2e7e,#ff9a3d);border-radius:100px;transition:.4s}
+.q{display:none}
+.q.active{display:block;animation:slide .4s ease}
+@keyframes slide{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.q label{font-weight:700;font-size:16px;line-height:1.4;display:block;margin:6px 0 4px}
+.q small{color:#ff2e7e;font-weight:600;font-size:12px}
+.q p.hint{color:#888;font-size:13px;margin-bottom:10px}
+textarea{width:100%;min-height:95px;border:2px solid #ffe1ee;border-radius:16px;padding:14px;font-size:15px;outline:none;resize:none;background:#fffafc}
+textarea:focus{border-color:#ff4d8d}
+.btns{display:flex;gap:10px;margin-top:16px}
+button{flex:1;padding:14px;border-radius:100px;border:none;font-weight:700;cursor:pointer;font-size:15px}
+.back{background:#f1f1f1}
+.next{background:#111;color:#fff}
+#final{display:none;text-align:center}
+#final h2{font-family:'Playfair Display',serif;font-size:30px;margin:10px 0}
+.wa{display:block;background:#25D366;color:#fff;text-decoration:none;padding:16px;border-radius:100px;font-weight:800;margin-top:18px;font-size:16px;box-shadow:0 10px 25px rgba(37,211,102,.4)}
+.love{font-size:48px}
+.footer{margin-top:18px;text-align:center;color:#999;font-size:12px}
+input[type=text]{width:100%;padding:13px;border:2px solid #ffe1ee;border-radius:14px;outline:none;font-size:15px}
+</style>
+</head>
+<body>
+<div class="hearts" id="hearts"></div>
+<div class="card">
+<div id="startScreen">
+<span class="badge">✨ MADE JUST FOR YOU • 2026</span>
+<h1>Hey Erica Owusu, <span>I have a question...</span></h1>
+<p class="sub">No pressure. Just answer with your heart. Every answer go make my day. Ready?</p>
+<div style="background:#fff0f6;border-radius:18px;padding:16px;margin:16px 0;display:flex;gap:12px;align-items:center">
+<div style="font-size:32px">💌</div>
+<div><b>7 little questions</b><br><span style="color:#777;font-size:13px">2 minutes • Only for Kojo Bezos</span></div>
+</div>
+<input type="text" id="nickname" placeholder="Your sweet name for me... e.g My Love 😍">
+<button class="next" style="width:100%;margin-top:12px" onclick="startQuiz()">Start — I Love You Too ❤️</button>
+<p style="text-align:center;color:#aaa;font-size:12px;margin-top:10px">From your Kojo, with all my heart</p>
+</div>
+
+<div id="quiz" style="display:none">
+<div style="display:flex;justify-content:space-between;font-size:13px;font-weight:600"><span id="stepText">Question 1 of 7</span><span style="color:#ff2e7e">Erica 💖 Kojo</span></div>
+<div class="progress"><div id="bar"></div></div>
+
+<div class="q active">
+<small>QUESTION 01 • THE BEGINNING</small>
+<label>When did you first realise say you love me?</label>
+<p class="hint">Was it my smile, my voice, or the way I dey treat you?</p>
+<textarea id="a1" placeholder="Type from your heart..."></textarea>
+</div>
+
+<div class="q">
+<small>QUESTION 02 • MY SMILE</small>
+<label>What be that one thing I do wey always dey make you smile, even when you vex?</label>
+<textarea id="a2" placeholder="That thing wey dey melt your heart..."></textarea>
+</div>
+
+<div class="q">
+<small>QUESTION 03 • IN 3 WORDS</small>
+<label>If you for describe me in only 3 words, what you go talk?</label>
+<textarea id="a3" placeholder="E.g Handsome, Caring, Funny..."></textarea>
+</div>
+
+<div class="q">
+<small>QUESTION 04 • FAVOURITE MEMORY</small>
+<label>What be your favourite memory of us together?</label>
+<p class="hint">The day you go never forget...</p>
+<textarea id="a4" placeholder="Tell me that day..."></textarea>
+</div>
+
+<div class="q">
+<small>QUESTION 05 • MY LOVE LANGUAGE</small>
+<label>What do you love most about me? My hug, my voice, my eyes, or my heart?</label>
+<textarea id="a5" placeholder="Be honest, I go blush..."></textarea>
+</div>
+
+<div class="q">
+<small>QUESTION 06 • RIGHT NOW</small>
+<label>If I dey beside you right now, what you go do first?</label>
+<textarea id="a6" placeholder="Hug me? Kiss me? Hold my hand?"></textarea>
+</div>
+
+<div class="q">
+<small>QUESTION 07 • FINISH AM</small>
+<label>Finish this sentence: "I love Kojo because..."</label>
+<p class="hint">This be the most important one 💖</p>
+<textarea id="a7" placeholder="I love Kojo because..."></textarea>
+</div>
+
+<div class="btns">
+<button class="back" onclick="prev()">← Back</button>
+<button class="next" id="nextBtn" onclick="next()">Next →</button>
+</div>
+</div>
+
+<div id="final">
+<div class="love">🥹❤️</div>
+<h2>Awnn, Erica...</h2>
+<p style="color:#666;line-height:1.6">You just make my whole year. Thank you for loving me this way.<br><b>Now send am to me on WhatsApp, make I read am with full heart.</b></p>
+<a id="waLink" class="wa" target="_blank" href="#">Send My Answers to Kojo on WhatsApp 💬</a>
+<p style="margin-top:12px;color:#888;font-size:13px">To: Kojo Bezos • 0560408541</p>
+<button onclick="location.reload()" style="background:none;color:#999;font-size:13px;margin-top:10px">↺ Answer again</button>
+</div>
+
+<div class="footer">Made with ❤️ for Erica Owusu • 2026 • By Kojo</div>
+</div>
+
+<script>
+let cur=0; const qs=document.querySelectorAll('.q');
+function startQuiz(){document.getElementById('startScreen').style.display='none';document.getElementById('quiz').style.display='block';update()}
+function update(){qs.forEach((q,i)=>q.classList.toggle('active',i===cur));document.getElementById('stepText').innerText=`Question ${cur+1} of 7`;document.getElementById('bar').style.width=((cur+1)/7*100)+'%';document.getElementById('nextBtn').innerText=cur===6?'See My Love Letter 💖':'Next →'}
+function next(){if(cur<6){cur++;update()}else{finish()}}
+function prev(){if(cur>0){cur--;update()}}
+function finish(){
+let nick=document.getElementById('nickname').value||'Your Baby';
+let q=[
+"When did you first realise you love me?",
+"What be that thing I do wey always dey make you smile?",
+"Describe me in 3 words?",
+"Your favourite memory of us?",
+"What do you love most about me?",
+"If I dey beside you right now, what you go do?",
+"Finish: I love Kojo because..."];
+let msg=`💖 *FOR KOJO - FROM ERICA OWUSU* 💖%0A%0A`;
+msg+=`My sweet name for you: ${nick}%0A%0A`;
+for(let i=1;i<=7;i++){let v=document.getElementById('a'+i).value||'(she smile, e too much)';msg+=`*Q${i}: ${q[i-1]}*%0A${encodeURIComponent(v)}%0A%0A`}
+msg+=`I love you so much, Kojo ❤️ - Erica`;
+document.getElementById('quiz').style.display='none';
+document.getElementById('final').style.display='block';
+document.getElementById('waLink').href=`https://wa.me/233560408541?text=${msg}`;
+}
+let h=document.getElementById('hearts');
+for(let i=0;i<15;i++){let s=document.createElement('span');s.innerText=['💖','❤️','💕','✨'][Math.floor(Math.random()*4)];s.style.left=Math.random()*100+'%';s.style.animationDelay=(Math.random()*5)+'s';h.appendChild(s)}
+</script>
+</body>
+</html>
